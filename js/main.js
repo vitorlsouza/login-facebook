@@ -3,7 +3,7 @@
 
   var fbLogin = doc.querySelector('.fb-login-button');
 
-  fbLogin.addEventListener('click', () => {
+  fbLogin.addEventListener('click', function() {
     checkLoginState();
   });
 
@@ -24,4 +24,8 @@
       }
     });
   }
+
+  FB.login(function(response) {
+    console.log(JSON.stringify(response));
+  });
 })(window, document);
