@@ -16,6 +16,14 @@ body {
   -webkit-font-smoothing: antialiased !important;
 }
 
+input {
+  padding: 15px 20px;
+  font-size: 16px;
+  margin: 0 0 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
 .content {
   height: 100%;
   display: flex;
@@ -25,13 +33,20 @@ body {
   background: #143d56;
 }
 
-.buttonLogin {
+.titleLogin {
+  margin: 0 0 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.contentLogin {
   padding: 30px;
   background: #fff;
   border-radius: 3px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
   width: 340px;
   text-align: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
