@@ -2,15 +2,23 @@
   'use strict';
 
   var fbLogin = doc.querySelector('.fb-login-button');
-  var logout = doc.querySelector('.logout');
+  var fbLogout = doc.querySelector('.fb-logout-button');
+
+  fbLogout.addEventListener('click', function() {
+    logout();
+  });
 
   fbLogin.addEventListener('click', function() {
     checkLoginState();
   });
 
-  logout.addEventListener('click', function() {
-    logout();
-  });
+  function logout() {
+    FB.logout(function(response) {
+      // Person is now logged out
+      console.log(response);
+      console.log(JSON.stringify(response));
+    });
+  }
 
   function statusChangeCallback(response) {
     console.log('statusChangeCallback');
@@ -71,13 +79,6 @@
       console.log('Successful login for: ' + response.name);
       doc.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
-    });
-  }
-
-  function logout() {
-    FB.logout(function(response) {
-      // Person is now logged out
-      console.log('Saiu');
     });
   }
 })(window, document);
