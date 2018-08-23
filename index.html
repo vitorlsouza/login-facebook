@@ -21,6 +21,9 @@
       console.log(response);
       if (response.status === 'connected') {
         testAPI();
+        FB.getLoginStatus(function (response) {
+          statusChangeCallback(response);
+        });
       } else {
         document.getElementById('status').innerHTML = 'Please log ' + 'into this app.';
       }
@@ -51,9 +54,6 @@
         console.log('Successful login for: ' + response.name);
         document.getElementById('status').innerHTML =
           'Thanks for logging in, ' + response.name + '!';
-        FB.getLoginStatus(function (response) {
-          statusChangeCallback(response);
-        });
       });
     }
 
