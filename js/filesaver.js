@@ -13,7 +13,7 @@
 
 /*! @source http://purl.eligrey.com/github/FileSaver.js/blob/master/src/FileSaver.js */
 
-saveAs =
+function saveAs =
   saveAs ||
   (function(view) {
     'use strict';
@@ -194,4 +194,4 @@ saveAs =
     (typeof self !== 'undefined' && self) ||
       (typeof window !== 'undefined' && window) ||
       this,
-  ));
+  );
