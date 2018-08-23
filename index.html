@@ -50,15 +50,14 @@
         console.log('Successful login for: ' + response.name);
         document.getElementById('status').innerHTML =
           'Thanks for logging in, ' + response.name + '!';
-        setTimeout(function () {
-          FB.api(
-            '2099676190350411',
-            function (response) {
-              if (response && !response.error) {
-                console.log(response)
-              }
-            });
-        }, 500)
+
+        FB.api(
+          '2099676190350411',
+          function (response) {
+            if (response && !response.error) {
+              console.log(response)
+            }
+          });
       });
     }
 
