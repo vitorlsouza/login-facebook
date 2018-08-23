@@ -22,7 +22,7 @@
       if (response.status === 'connected') {
         testAPI();
       } else {
-        doc.getElementById('status').innerHTML = 'Please log ' + 'into this app.';
+        document.getElementById('status').innerHTML = 'Please log ' + 'into this app.';
       }
     }
 
@@ -32,7 +32,7 @@
       });
     }
 
-    win.fbAsyncInit = function () {
+    window.fbAsyncInit = function () {
       FB.init({
         appId: '242519009785125',
         cookie: true,
@@ -49,7 +49,7 @@
       console.log('Welcome!  Fetching your information.... ');
       FB.api('/me', function (response) {
         console.log('Successful login for: ' + response.name);
-        doc.getElementById('status').innerHTML =
+        document.getElementById('status').innerHTML =
           'Thanks for logging in, ' + response.name + '!';
       });
     }
