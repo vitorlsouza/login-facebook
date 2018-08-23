@@ -55,17 +55,13 @@
     //   });
     // }
     function testAPI() {
-      if (response.authResponse) {
-        console.log('Welcome!  Fetching your information.... ');
-        FB.api('/me', function (response) {
-          console.log('Good to see you, ' + response.name + '.');
-        });
-        FB.login(function (response) {
-          console.log(response)
-        }, { scope: 'public_profile,email' });
-      } else {
-        console.log('User cancelled login or did not fully authorize.');
-      }
+      console.log('Welcome!  Fetching your information.... ');
+      FB.api('/me', function (response) {
+        console.log('Good to see you, ' + response.name + '.');
+      });
+      FB.login(function (response) {
+        console.log(response)
+      }, { scope: 'public_profile,email' });
     }
 
     (function (d, s, id) {
