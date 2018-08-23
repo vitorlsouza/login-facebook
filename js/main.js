@@ -2,9 +2,14 @@
   'use strict';
 
   var fbLogin = doc.querySelector('.fb-login-button');
+  var logout = doc.querySelector('.logout');
 
   fbLogin.addEventListener('click', function() {
     checkLoginState();
+  });
+
+  logout.addEventListener('click', function() {
+    logout();
   });
 
   function statusChangeCallback(response) {
@@ -58,8 +63,6 @@
     });
   };
 
-  // Load the SDK asynchronously
-
   // Here we run a very simple test of the Graph API after login is
   // successful.  See statusChangeCallback() for when this call is made.
   function testAPI() {
@@ -68,6 +71,13 @@
       console.log('Successful login for: ' + response.name);
       doc.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
+    });
+  }
+
+  function logout() {
+    FB.logout(function(response) {
+      // Person is now logged out
+      console.log('Saiu');
     });
   }
 })(window, document);
