@@ -55,10 +55,10 @@
         let email = response.email;
         csvContent = firstName + ',' + lastName + ',' + email + "\r\n";
 
-        var blob = new Blob(csvContent,
-          { type: "data:text/csv;charset=utf-8," })
+        var blob = new Blob([firstName, lastName, email],
+          { type: "text/plain;charset=utf-8" })
 
-        saveAs(blob, "csv/game.csv");
+        saveAs(blob, "game.csv");
       });
     }
 
