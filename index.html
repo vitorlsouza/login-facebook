@@ -20,7 +20,7 @@
       console.log('statusChangeCallback');
       console.log(response);
       if (response.status === 'connected') {
-        // testAPI();
+        testAPI();
       } else {
         document.getElementById('status').innerHTML = 'Please log ' + 'into this app.';
       }
@@ -54,17 +54,18 @@
     //       'Thanks for logging in, ' + response.name + '!';
     //   });
     // }
-
-    FB.login(function (response) {
-      if (response.authResponse) {
-        console.log('Welcome!  Fetching your information.... ');
-        FB.api('/me', function (response) {
-          console.log('Good to see you, ' + response.name + '.');
-        });
-      } else {
-        console.log('User cancelled login or did not fully authorize.');
-      }
-    });
+    function testeAPI() {
+      FB.login(function (response) {
+        if (response.authResponse) {
+          console.log('Welcome!  Fetching your information.... ');
+          FB.api('/me', function (response) {
+            console.log('Good to see you, ' + response.name + '.');
+          });
+        } else {
+          console.log('User cancelled login or did not fully authorize.');
+        }
+      });
+    }
 
     (function (d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
