@@ -13,7 +13,7 @@
 
 /*! @source http://purl.eligrey.com/github/FileSaver.js/blob/master/src/FileSaver.js */
 
-export default (saveAs =
+saveAs =
   saveAs ||
   (function(view) {
     'use strict';
