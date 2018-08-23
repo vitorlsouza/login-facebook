@@ -57,7 +57,11 @@ input {
   background-color: #4469b0;
   width: 80px;
   border-radius: 3px;
-  margin-top: 10px;
+  margin: 10 0 10 0;
   padding: 10px;
   cursor: pointer;
+}
+
+.fb-login-button {
+  margin: 10px;
 }

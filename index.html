@@ -45,15 +45,6 @@
       });
     };
 
-    // function testAPI() {
-    //   console.log('Welcome!  Fetching your information.... ');
-    //   FB.api('/me', function (response) {
-    //     console.log(response)
-    //     console.log('Successful login for: ' + response.name);
-    //     document.getElementById('status').innerHTML =
-    //       'Thanks for logging in, ' + response.name + '!';
-    //   });
-    // }
     function testAPI() {
       console.log('Welcome!  Fetching your information.... ');
       FB.api('/me', function (response) {
@@ -82,8 +73,8 @@
       <div class="fb-login-button" onlogin="checkLoginState()" data-max-rows="1" data-size="large" data-button-type="login_with"
         data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false">
       </div>
-      <div class="fb-logout-button">
-        Logout
+      <div class="fb-login-button" onlogin="checkLoginState()" data-max-rows="1" data-size="large" data-button-type="login_with"
+        data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="false">
       </div>
       <div id="status">
       </div>

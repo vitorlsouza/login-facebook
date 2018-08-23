@@ -2,7 +2,7 @@
   'use strict';
 
   var fbLogout = doc.querySelector('.fb-logout-button');
-  var fbLogin = doc.querySelector('.fb-login-button');
+  var fbLoginButton = doc.querySelector('.fb-login-button');
   var tel = doc.querySelector('[data-js="tel"]');
   var email = doc.querySelector('[data-js="email"]');
 
@@ -10,7 +10,7 @@
     logout();
   });
 
-  fbLogin.addEventListener('click', function() {
+  fbLoginButton.addEventListener('click', function() {
     getInputValues();
   });
 
