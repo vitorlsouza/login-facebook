@@ -45,19 +45,16 @@
 
     function testAPI() {
       console.log('Welcome!  Fetching your information.... ');
-      FB.api('/me?fields={email, about}', function (response) {
-        console.log(response)
+      FB.api('/me', {"fields":"email,first_name,last_name"}, function (response) {
         console.log('Successful login for: ' + response.name);
         document.getElementById('status').innerHTML =
           'Thanks for logging in, ' + response.name + '!';
 
-        FB.api(
-          '2099676190350411',
-          function (response) {
-            if (response && !response.error) {
-              console.log(response)
-            }
-          });
+          let csvContent = "data:text/csv;charset=utf-8,";
+          let firstName = response.first_name;
+          let lastName = response.last_name;
+          let email = response.email;
+          csvContent = first_name + ',' + last_name + ',' + email + "\r\n";
       });
     }
 
