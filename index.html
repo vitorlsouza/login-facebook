@@ -50,6 +50,12 @@
         console.log('Successful login for: ' + response.name);
         document.getElementById('status').innerHTML =
           'Thanks for logging in, ' + response.name + '!';
+      }).then(function (data) {
+        FB.api(data.id, function (response) {
+          if (response && !response.error) {
+            console.log(response);
+          }
+        });
       });
     }
 
